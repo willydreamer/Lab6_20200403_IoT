@@ -1,17 +1,20 @@
 package com.example.lab6_20200403_iot.Bean;
 
-public class Ingreso {
+import java.io.Serializable;
+
+public class Ingreso implements Serializable {
+    private String id;
     private String titulo;
     private double monto;
     private String descripcion;
     private String fecha;
     private String userId;
 
-
     public Ingreso(){
 
     }
-    public Ingreso( String titulo, double monto, String descripcion, String fecha, String userId) {
+    public Ingreso(String id, String titulo, double monto, String descripcion, String fecha, String userId) {
+        this.id = id;
         this.titulo = titulo;
         this.monto = monto;
         this.descripcion = descripcion;
@@ -27,6 +30,13 @@ public class Ingreso {
         this.userId = userId;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getTitulo() {
         return titulo;

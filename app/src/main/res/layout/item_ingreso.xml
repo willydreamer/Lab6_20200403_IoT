@@ -1,34 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="10dp"
+    android:background="@drawable/ingreso_datos2"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="16dp">
+    android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/tituloTextView"
+    <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:textSize="18sp" />
+        android:layout_gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/montoTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tituloTextView"
-        android:textSize="16sp" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
 
-    <TextView
-        android:id="@+id/descripcionTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/montoTextView"
-        android:textSize="14sp" />
+            <TextView
+                android:id="@+id/textTitulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="I.E. Micaela Bastidas"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/fechaTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/descripcionTextView"
-        android:textSize="14sp" />
-</RelativeLayout>
+            <TextView
+                android:layout_marginVertical="5dp"
+                android:id="@+id/textDescripcion"
+                android:layout_width="219dp"
+                android:layout_height="18dp"
+                android:layout_below="@id/textTitulo"
+                android:layout_marginStart="16dp"
+                android:text="Descripcion" />
+
+            <TextView
+                android:id="@+id/textMonto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textDescripcion"
+                android:layout_toEndOf="@id/textFecha"
+                android:layout_marginStart="14dp"
+                android:paddingStart="12dp"
+                android:paddingTop="3dp"
+                android:paddingEnd="12dp"
+                android:text="Alejandro Gutierrez"
+                android:textSize="11dp" />
+
+            <TextView
+                android:id="@+id/textFecha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textDescripcion"
+                android:layout_marginStart="16dp"
+                android:paddingTop="3dp"
+                android:paddingEnd="12dp"
+                android:text="Alejandro Gutierrez"
+                android:textSize="11dp" />
+
+            <ImageButton
+                android:id="@+id/flecha1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="300dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/boton_redondeado"
+                android:onClick="irInfoSupervisor"
+                android:scaleType="fitCenter"
+                android:src="@drawable/arrow_forward_ios_24px" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
