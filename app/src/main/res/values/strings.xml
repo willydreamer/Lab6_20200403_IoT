@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Lab6_20200403_IoT</string>
+    <!-- Auth method picker -->
+    <string name="fui_sign_in_with_email">Acceder con email</string>
+    <string name="fui_sign_in_with_google">Acceder con Google</string>
+    <string name="fui_sign_in_with_facebook">Acceder con Facebook</string>
 </resources>

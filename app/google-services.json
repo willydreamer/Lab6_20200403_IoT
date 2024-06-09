@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "61862593574",
+    "project_id": "experimentaciones-b5aa5",
+    "storage_bucket": "experimentaciones-b5aa5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:61862593574:android:ed12fae8cf2a59f0cb52e7",
+        "android_client_info": {
+          "package_name": "com.example.lab6_20200403_iot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "61862593574-joai3q0lgpij28v5g9rt3ceomdr361h5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBsT61-BQN_kRAaXqd4O01LkkOH-9LrFcY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "61862593574-joai3q0lgpij28v5g9rt3ceomdr361h5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/ingresos"
+        android:title="Ingresos"
+        android:icon="@drawable/payments_24px"
+        />
+    <item
+        android:id="@+id/egresos"
+        android:title="Egresos"
+        android:icon="@drawable/egreso_icon"
+        />
+    <item
+        android:id="@+id/resumen"
+        android:title="Resumen"
+        android:icon="@drawable/finance_24px"
+        />
+    <item
+        android:id="@+id/cerrar"
+        android:title="Logout"
+        android:icon="@drawable/logout_24px"
+        />
+
+</menu>
