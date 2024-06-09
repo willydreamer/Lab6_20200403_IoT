@@ -1,10 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#323535"
     tools:context=".EgresosFragment">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/saludo"
+        android:layout_width="304dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/recyclerViewEgresos"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="62dp"
+        android:layout_marginBottom="39dp"
+        android:text="Hola ..."
+        android:textColor="@color/white"
+        android:textSize="18dp">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="132dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="44dp"
+        android:text="Egresos"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.165"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.065"></TextView>
+
+    <ImageButton
+        android:id="@+id/btnReload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/textView"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="50dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/autorenew_24px"
+        app:tint="@color/white" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewEgresos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/textView"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="20dp"
+        android:padding="16dp"
+        tools:listitem="@layout/item_egreso" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddEgreso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"
+        android:src="@drawable/add_24px"
+        />
+
+</RelativeLayout>

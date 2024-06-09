@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InformacionEgresoActivity">
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/fondo2">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <!-- Fila para el encabezado 'General' y el icono de editar -->
+                <LinearLayout
+                    android:id="@+id/llHeader"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:textColor="@color/white"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:text="General"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/btnEditar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:text="Editar"
+                        android:textColor="#E8B92C"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+                    <Button
+                        android:id="@+id/btnGuardar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:text="Guardar"
+                        android:textSize="16sp"
+                        android:backgroundTint="#FF9800"
+                        android:visibility="gone"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llTitulo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/llHeader">
+
+                    <TextView
+                        android:textColor="@color/white"
+
+                        android:id="@+id/tituloIngreso"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="16dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="4dp"
+                        android:text="Titulo"
+                        android:textSize="16dp" />
+
+                    <EditText
+                        android:id="@+id/editEgreso"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/text_background"
+                        android:padding="8dp"
+                        android:paddingStart="16dp"
+                        android:text="Ingreso"
+                        android:textStyle="bold"
+                        android:inputType="text"
+                        android:enabled="false" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llDescripcion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/llTitulo">
+
+                    <TextView
+                        android:textColor="@color/white"
+                        android:id="@+id/titulodescripcion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="16dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="4dp"
+                        android:text="Descripcion"
+                        android:textSize="16dp" />
+
+                    <EditText
+                        android:id="@+id/editDescripcion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/text_background"
+                        android:padding="8dp"
+                        android:paddingStart="16dp"
+                        android:text="Descripcion"
+                        android:textStyle="bold"
+                        android:enabled="false"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llMonto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/llDescripcion">
+
+                    <TextView
+                        android:textColor="@color/white"
+                        android:id="@+id/tituloMonto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="16dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="4dp"
+                        android:text="Monto"
+                        android:textSize="16dp" />
+
+                    <EditText
+                        android:id="@+id/editMonto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/text_background"
+                        android:padding="8dp"
+                        android:paddingStart="16dp"
+                        android:text="10.00"
+                        android:textStyle="bold"
+                        android:enabled="false"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llFecha"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/llMonto">
+
+                    <TextView
+                        android:textColor="@color/white"
+                        android:id="@+id/tituloFecha"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="16dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="4dp"
+                        android:text="Fecha"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:id="@+id/editFecha"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/text_background"
+                        android:padding="8dp"
+                        android:paddingStart="16dp"
+                        android:text="14/14/14"
+                        android:textStyle="bold"
+                        android:enabled="false"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginBottom="30dp"
+                    app:layout_constraintTop_toBottomOf="@id/llFecha"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:layout_height="wrap_content">
+                    <Button
+                        android:gravity="center"
+                        android:id="@+id/buttonEliminarEgreso"
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="#F44336"
+                        android:text="Eliminar Sitio"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+
+</RelativeLayout>

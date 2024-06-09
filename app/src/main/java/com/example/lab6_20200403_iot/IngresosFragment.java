@@ -75,7 +75,8 @@ public class IngresosFragment extends Fragment {
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
         if (currentUser != null && currentUser.getDisplayName() != null) {
             String displayName = currentUser.getDisplayName();
-            String greetingMessage = String.format("Hola! ", userId);
+            Log.d("name autenticado", "onCreateView: " + displayName);
+            String greetingMessage = String.format("Hola! " + displayName);
             saludo.setText(greetingMessage);
         } else {
             saludo.setText("Hola :)");
@@ -86,7 +87,6 @@ public class IngresosFragment extends Fragment {
         fabAddIngreso.setOnClickListener(v -> showAddIngresoDialog());
 
         btnReload = view.findViewById(R.id.btnReload);
-        //btnReload.setOnClickListener(v -> reloadIngresos());
 
         obtenerIngresosDeFirestore();
 
@@ -95,7 +95,7 @@ public class IngresosFragment extends Fragment {
 
     private void obtenerIngresosDeFirestore() {
         db.collection("ingresos")
-                .whereEqualTo("userId", userId)  // Filtro para obtener solo los ingresos del usuario actual
+                .whereEqualTo("userId", userId)
                 .get()
                 .addOnSuccessListener(queryDocumentSnapshots -> {
                     if (!queryDocumentSnapshots.isEmpty()) {
@@ -103,7 +103,7 @@ public class IngresosFragment extends Fragment {
                             Ingreso ingreso = document.toObject(Ingreso.class);
                             ingresos.add(ingreso);
                         }
-                        adapter.notifyDataSetChanged(); // Notificar al adapter que los datos han cambiado
+                        adapter.notifyDataSetChanged();
                     }
                 })
                 .addOnFailureListener(e -> {
@@ -139,15 +139,13 @@ public class IngresosFragment extends Fragment {
 
         Button fechaButton = dialogView.findViewById(R.id.fechaButton);
         fechaButton.setOnClickListener(v -> {
-            // Obtener la fecha actual
+
             Calendar calendar = Calendar.getInstance();
             int year = calendar.get(Calendar.YEAR);
             int month = calendar.get(Calendar.MONTH);
             int dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH);
 
-            // Crear y mostrar el DatePickerDialog
             DatePickerDialog datePickerDialog = new DatePickerDialog(getContext(), (view, year1, monthOfYear, dayOfMonth1) -> {
-                // Actualizar el texto del Button con la fecha seleccionada
                 String selectedDate = dayOfMonth1 + "/" + (monthOfYear + 1) + "/" + year1;
                 fechaButton.setText(selectedDate);
             }, year, month, dayOfMonth);
@@ -159,7 +157,7 @@ public class IngresosFragment extends Fragment {
     private String generarIdSitio(String titulo) {
         String letrasDepartamento = titulo.substring(0, Math.min(titulo.length(), 2)).toUpperCase();
         Random random = new Random();
-        int numeroAleatorio = random.nextInt(9000) + 1000; // Generar un número entre 100 y 999
+        int numeroAleatorio = random.nextInt(9000) + 1000;
         return letrasDepartamento + numeroAleatorio;
     }
 
